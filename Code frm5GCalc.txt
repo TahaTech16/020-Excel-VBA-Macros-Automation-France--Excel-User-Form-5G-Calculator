@@ -1,0 +1,875 @@
+Private Sub btnCalculate_Click()
+                
+                Dim ChkNA As String
+                ChkNA = "N / A"
+                
+                 txtNbwPrb_value = txtNbwPrb.Text
+                 
+               
+               If txtJAC.Text = "" Then
+                    MsgBox ("Can not entered blank value")
+                    Exit Sub
+    
+                End If
+                
+                
+               If txtNbwPrb.Text = ChkNA Then
+                    MsgBox ("Value can not be N/A")
+                    Exit Sub
+    
+                End If
+                
+                
+                
+               If txtNbwPrb.Value = ChkNA Then
+                    MsgBox ("Value can not be N/A")
+                    Exit Sub
+    
+                End If
+                
+                
+               If txtNbwPrb.Text = "N / A" Then
+                    MsgBox ("Value can not be N/A")
+                    Exit Sub
+    
+                End If
+                
+                
+               If txtNbwPrb.Value = "N / A" Then
+                    MsgBox ("Value can not be N/A")
+                    Exit Sub
+    
+                End If
+                
+                
+               If txtNbwPrb_value = "N / A" Then
+                    MsgBox ("Value can not be N/A")
+                    Exit Sub
+    
+                End If
+                
+               If txtNbwPrb_value = "N / A" Then
+                    MsgBox ("Value can not be N/A")
+                    Exit Sub
+    
+                End If
+                
+    
+               If txtNbwPrb_value = "N / A" Then
+                    MsgBox ("Value can not be N/A")
+                    Exit Sub
+    
+                End If
+    
+    Dim jValue As Integer
+    
+    
+    If optNo.Value = True Then
+            txtMassMimoNo.Value = 1
+    End If
+    
+    
+    If optYes.Value = True Then
+      
+        If txtMassMimoNo.Value = 1 Or txtMassMimoNo.Value = 2 Or txtMassMimoNo.Value = 3 Or txtMassMimoNo.Value = 4 _
+            Or txtMassMimoNo.Value = 5 Or txtMassMimoNo.Value = 6 Or txtMassMimoNo.Value = 7 Or txtMassMimoNo.Value = 8 _
+            Or txtMassMimoNo.Value = 9 Or txtMassMimoNo.Value = 10 Or txtMassMimoNo.Value = 11 Or txtMassMimoNo.Value = 12 _
+            Or txtMassMimoNo.Value = 13 Or txtMassMimoNo.Value = 14 Or txtMassMimoNo.Value = 15 Or txtMassMimoNo.Value = 16 _
+            Or txtMassMimoNo.Value = 17 Or txtMassMimoNo.Value = 18 Or txtMassMimoNo.Value = 19 Or txtMassMimoNo.Value = 20 _
+            Or txtMassMimoNo.Value = 21 Or txtMassMimoNo.Value = 22 Or txtMassMimoNo.Value = 23 Or txtMassMimoNo.Value = 24 Then
+            
+            txtMassMimoNo.Value = txtMassMimoNo.Value
+            
+        Else
+        
+            txtMassMimoNo.Value = ""
+            MsgBox ("Please check your entered value")
+            Exit Sub
+        End If
+    
+  End If
+    
+''--------------------------
+
+jValue = txtJAC.Text
+
+                
+                
+''txtJAC.Value = jValue
+
+    For j = 1 To 2
+    
+        If j = 1 Then
+              For i = 1 To 100
+                    
+                'If txtJAC.Value = i Then
+                '    Exit Sub
+                'End If
+               
+                If jValue = i Then
+                    'Exit Sub
+                    Exit For
+                End If
+               
+                
+            Next
+        Else
+        
+        MsgBox ("Please check your entered value")
+        txtJAC.Value = ""
+        
+        Exit Sub
+        
+        End If
+    Exit For
+  Next
+    
+''--------------------------
+    
+'    MsgBox ("calculate clicked")
+                
+    
+    
+    If optUL.Value = True Then
+      
+        If txtVj.Value = 1 Or txtVj.Value = 2 Or txtVj.Value = 3 Or txtVj.Value = 4 Then
+            txtVj.Value = txtVj.Value
+            
+        Else
+        
+            txtVj.Value = ""
+            MsgBox ("Please check your entered value")
+            Exit Sub
+        End If
+    
+  End If
+    
+''--------------------------
+    
+  If optDL.Value = True Then
+      
+        If txtVj.Value = 1 Or txtVj.Value = 2 Or txtVj.Value = 3 Or txtVj.Value = 4 _
+            Or txtVj.Value = 5 Or txtVj.Value = 6 Or txtVj.Value = 7 Or txtVj.Value = 8 Then
+            txtVj.Value = txtVj.Value
+            
+        Else
+        
+            txtVj.Value = ""
+            MsgBox ("Please check your entered value")
+            Exit Sub
+        End If
+    
+  End If
+  
+    
+'/*
+    
+'    If optDL.Value = True Then
+'            txtVj.Value = 1
+'    End If
+    
+'*/
+
+
+Dim massive As Double
+Dim Jac As Double
+Dim Vj As Double
+Dim Qjm As Double
+Dim Rmax As Double
+Dim Nbw As Double
+Dim Ohj As Double
+Dim optVal As Double
+
+
+    If opt1.Value = True Then
+            optVal = 1
+            'optVal = opt1.Value
+    End If
+
+    If opt0_8.Value = True Then
+            optVal = 0.8
+            'optVal = opt0_8.Value
+    End If
+
+
+    If opt0_75.Value = True Then
+            optVal = 0.75
+            'optVal = opt0_75.Value
+    End If
+
+
+    If opt0_4.Value = True Then
+            
+            optVal = 0.4
+            'optVal = opt0_4.Value
+            
+    End If
+
+
+massive = txtMassMimoNo.Value
+Jac = txtJAC.Value
+Vj = txtVj.Value
+Qjm = txtQjm.Value
+Rmax = txtRmax.Value
+Nbw = txtNbwPrb.Value
+Ohj = txtOhj.Value
+Ohj = 1 - Ohj
+optVal = optVal
+
+
+txtFinalValue.Value = massive * Jac * Vj * Qjm * Rmax * Nbw * Ohj * optVal
+
+Dim result    As Double
+result = txtFinalValue.Value
+    
+    'MsgBox ("Maximum Throughput=" & resul)
+    msg = "Maximum Throughput=" & result
+    MsgBox (msg)
+    
+    
+    
+End Sub
+
+
+
+Private Sub cmb5gNr_Change()
+    
+    ''For 15
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "5MHZ" Then
+        txtNbwPrb.Value = 25
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "10MHZ" Then
+        txtNbwPrb.Value = 52
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "15MHZ" Then
+        txtNbwPrb.Value = 79
+    End If
+    
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "20MHZ" Then
+        txtNbwPrb.Value = 106
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "25MHZ" Then
+        txtNbwPrb.Value = 133
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "30MHZ" Then
+        txtNbwPrb.Value = 160
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "40MHZ" Then
+        txtNbwPrb.Value = 216
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "50MHZ" Then
+        txtNbwPrb.Value = 270
+    End If
+    
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "60MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "80MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "90MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "100MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "200MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "400MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    
+    
+    '''-------------------
+    ''For 30
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "5MHZ" Then
+        txtNbwPrb.Value = 11
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "10MHZ" Then
+        txtNbwPrb.Value = 24
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "15MHZ" Then
+        txtNbwPrb.Value = 38
+    End If
+    
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "20MHZ" Then
+        txtNbwPrb.Value = 51
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "25MHZ" Then
+        txtNbwPrb.Value = 65
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "30MHZ" Then
+        txtNbwPrb.Value = 78
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "40MHZ" Then
+        txtNbwPrb.Value = 106
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "50MHZ" Then
+        txtNbwPrb.Value = 133
+    End If
+    
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "60MHZ" Then
+        txtNbwPrb.Value = 162
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "80MHZ" Then
+        txtNbwPrb.Value = 217
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "90MHZ" Then
+        txtNbwPrb.Value = 245
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "100MHZ" Then
+        txtNbwPrb.Value = 273
+    End If
+    
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "200MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "400MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    
+    
+    '''-------------------
+    ''For 60
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "5MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "10MHZ" Then
+        txtNbwPrb.Value = 11
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "15MHZ" Then
+        txtNbwPrb.Value = 18
+    End If
+    
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "20MHZ" Then
+        txtNbwPrb.Value = 24
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "25MHZ" Then
+        txtNbwPrb.Value = 31
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "30MHZ" Then
+        txtNbwPrb.Value = 38
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "40MHZ" Then
+        txtNbwPrb.Value = 51
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "50MHZ" Then
+        txtNbwPrb.Value = 66  ''65
+    End If
+    
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "60MHZ" Then
+        txtNbwPrb.Value = 79
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "80MHZ" Then
+        txtNbwPrb.Value = 107
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "90MHZ" Then
+        txtNbwPrb.Value = 121
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "100MHZ" Then
+        txtNbwPrb.Value = 135
+    End If
+    
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "200MHZ" Then
+        txtNbwPrb.Value = 264
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "400MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    
+    
+    '''-------------------
+    ''For 120
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "5MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "10MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "15MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "20MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "25MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "30MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "40MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "50MHZ" Then
+        txtNbwPrb.Value = 32
+    End If
+    
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "60MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "80MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "90MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "100MHZ" Then
+        txtNbwPrb.Value = 66
+    End If
+    
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "200MHZ" Then
+        txtNbwPrb.Value = 132
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "400MHZ" Then
+        txtNbwPrb.Value = 264
+    End If
+    
+    
+    
+End Sub
+
+Private Sub cmbBandWith_Change()
+    
+    ''For 15
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "5MHZ" Then
+        txtNbwPrb.Value = 25
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "10MHZ" Then
+        txtNbwPrb.Value = 52
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "15MHZ" Then
+        txtNbwPrb.Value = 79
+    End If
+    
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "20MHZ" Then
+        txtNbwPrb.Value = 106
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "25MHZ" Then
+        txtNbwPrb.Value = 133
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "30MHZ" Then
+        txtNbwPrb.Value = 160
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "40MHZ" Then
+        txtNbwPrb.Value = 216
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "50MHZ" Then
+        txtNbwPrb.Value = 270
+    End If
+    
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "60MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "80MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "90MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "100MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "200MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 15 And cmbBandWith.Value = "400MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    
+    
+    '''-------------------
+    ''For 30
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "5MHZ" Then
+        txtNbwPrb.Value = 11
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "10MHZ" Then
+        txtNbwPrb.Value = 24
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "15MHZ" Then
+        txtNbwPrb.Value = 38
+    End If
+    
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "20MHZ" Then
+        txtNbwPrb.Value = 51
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "25MHZ" Then
+        txtNbwPrb.Value = 65
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "30MHZ" Then
+        txtNbwPrb.Value = 78
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "40MHZ" Then
+        txtNbwPrb.Value = 106
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "50MHZ" Then
+        txtNbwPrb.Value = 133
+    End If
+    
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "60MHZ" Then
+        txtNbwPrb.Value = 162
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "80MHZ" Then
+        txtNbwPrb.Value = 217
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "90MHZ" Then
+        txtNbwPrb.Value = 245
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "100MHZ" Then
+        txtNbwPrb.Value = 273
+    End If
+    
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "200MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 30 And cmbBandWith.Value = "400MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    
+    
+    '''-------------------
+    ''For 60
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "5MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "10MHZ" Then
+        txtNbwPrb.Value = 11
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "15MHZ" Then
+        txtNbwPrb.Value = 18
+    End If
+    
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "20MHZ" Then
+        txtNbwPrb.Value = 24
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "25MHZ" Then
+        txtNbwPrb.Value = 31
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "30MHZ" Then
+        txtNbwPrb.Value = 38
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "40MHZ" Then
+        txtNbwPrb.Value = 51
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "50MHZ" Then
+        txtNbwPrb.Value = 66  ''65
+    End If
+    
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "60MHZ" Then
+        txtNbwPrb.Value = 79
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "80MHZ" Then
+        txtNbwPrb.Value = 107
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "90MHZ" Then
+        txtNbwPrb.Value = 121
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "100MHZ" Then
+        txtNbwPrb.Value = 135
+    End If
+    
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "200MHZ" Then
+        txtNbwPrb.Value = 264
+    End If
+    
+    If cmb5gNr.Value = 60 And cmbBandWith.Value = "400MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    
+    
+    '''-------------------
+    ''For 120
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "5MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "10MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "15MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "20MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "25MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "30MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "40MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "50MHZ" Then
+        txtNbwPrb.Value = 32
+    End If
+    
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "60MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "80MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "90MHZ" Then
+        txtNbwPrb.Value = "N / A"
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "100MHZ" Then
+        txtNbwPrb.Value = 66
+    End If
+    
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "200MHZ" Then
+        txtNbwPrb.Value = 132
+    End If
+    
+    If cmb5gNr.Value = 120 And cmbBandWith.Value = "400MHZ" Then
+        txtNbwPrb.Value = 264
+    End If
+    
+    
+    
+End Sub
+
+
+
+Private Sub cmbOH_Change()
+    
+    
+    If cmbOH.Value = "[0.14]-Frequency Range FR1 for DL" Then
+        txtOhj.Value = 0.14
+    End If
+    
+    If cmbOH.Value = "[0.18]-Frequency Range FR2 for DL" Then
+        txtOhj.Value = 0.18
+    End If
+    
+    If cmbOH.Value = "[0.08]-Frequency Range FR1 for UL" Then
+        txtOhj.Value = 0.08
+    End If
+    
+    
+    If cmbOH.Value = "[0.10]-Frequency Range FR2 for DL" Then
+        txtOhj.Value = 0.1
+    End If
+    
+    
+    
+End Sub
+
+Private Sub cmbQj_Change()
+    
+    If cmbQj.Value = "2-QPSK" Then
+        txtQjm.Value = 2
+    End If
+    
+    If cmbQj.Value = "4-16QAM" Then
+        txtQjm.Value = 4
+    End If
+    
+    
+    If cmbQj.Value = "8-64QAM" Then
+        txtQjm.Value = 8
+    End If
+    
+    
+    If cmbQj.Value = "16-256QAM" Then
+        txtQjm.Value = 16
+    End If
+    
+End Sub
+
+Private Sub UserForm_Initialize()
+    ''frm5GCal
+    
+    optDL.Value = True
+    optFDD.Value = True
+    optNo.Value = True
+    txtMassMimoNo.Value = 1
+    txtJAC.Value = 1
+    txtVj.Value = 1
+    
+    With cmbQj
+    
+    .AddItem "2-QPSK"
+    .AddItem "4-16QAM"
+    .AddItem "8-64QAM"
+    .AddItem "16-256QAM"
+    
+    End With
+    
+    
+    txtRmax.Value = 0.92578125
+    
+    
+    With cmb5gNr
+    
+    .AddItem "15"
+    .AddItem "30"
+    .AddItem "60"
+    .AddItem "120"
+    
+    End With
+    
+    
+    With cmbBandWith
+    
+    .AddItem "5MHZ"
+    .AddItem "10MHZ"
+    .AddItem "15MHZ"
+    .AddItem "20MHZ"
+    .AddItem "25MHZ"
+    .AddItem "30MHZ"
+    .AddItem "40MHZ"
+    .AddItem "50MHZ"
+    .AddItem "60MHZ"
+    .AddItem "80MHZ"
+    .AddItem "90MHZ"
+    .AddItem "100MHZ"
+    .AddItem "200MHZ"
+    .AddItem "400MHZ"
+    
+    End With
+    
+    txtNbwPrb.Value = 106
+    opt1.Value = True
+    
+    With cmbOH
+    
+    .AddItem "[0.14]-Frequency Range FR1 for DL"
+    .AddItem "[0.18]-Frequency Range FR2 for DL"
+    .AddItem "[0.08]-Frequency Range FR1 for UL"
+    .AddItem "[0.10]-Frequency Range FR2 for DL"
+    
+    End With
+    
+    
+    cmbQj.Value = "2-QPSK"
+    cmb5gNr.Value = 15
+    cmbBandWith.Value = "20MHZ"
+    cmbOH.Value = "[0.14]-Frequency Range FR1 for DL"
+    txtOhj.Value = 0.14
+    
+    
+    
+    
+End Sub

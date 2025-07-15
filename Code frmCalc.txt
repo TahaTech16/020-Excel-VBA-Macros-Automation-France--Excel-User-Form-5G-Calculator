@@ -1,0 +1,89 @@
+
+
+Private Sub btnCalculate_Click()
+    MsgBox ("5G NR Throughput in Mbps is 24.253366")
+    
+End Sub
+
+Private Sub UserForm_Initialize()
+
+    optDL.Value = True
+    optFDD.Value = True
+    optYes.Value = True
+    optAuto.Value = True
+    opt1.Value = True
+    optAutomatic.Value = True
+    optYesUseFlexible.Value = True
+    
+    
+    With ComboBox1
+    
+    .AddItem "BW:5MHz FR1 µ:15kHz:"
+    .AddItem "BW:10MHz FR1 µ:15kHz:"
+    .AddItem "BW:15MHz FR1 µ:15kHz:"
+    .AddItem "BW:20MHz FR1 µ:15kHz:"
+    .AddItem "BW:25MHz FR1 µ:15kHz:"
+    
+    ''-----
+    .AddItem "BW:30MHz FR1 µ:15kHz:"
+    .AddItem "BW:40MHz FR1 µ:15kHz:"
+    .AddItem "BW:50MHz FR1 µ:15kHz:"
+    .AddItem "BW:5MHz FR1 µ:30kHz:"
+    .AddItem "BW:10MHz FR1 µ:30kHz:"
+    
+    ''-----
+    .AddItem "BW:15MHz FR1 µ:30kHz"
+    .AddItem "BW:20MHz FR1 µ:30kHz:"
+    .AddItem "BW:25MHz FR1 µ:30kHz:"
+    .AddItem "BW:30MHz FR1 µ:30kHz:"
+    .AddItem "BW:40MHz FR1 µ:30kHz:"
+    ''-----
+    
+    .AddItem "BW:50MHz FR1 µ:30kHz:"
+    .AddItem "BW:60MHz FR1 µ:30kHz:"
+    .AddItem "BW:70MHz FR1 µ:30kHz:"
+    .AddItem "BW:80MHz FR1 µ:30kHz:"
+    .AddItem "BW:90MHz FR1 µ:30kHz:"
+    
+    ''-----
+    
+    .AddItem "BW:100MHz FR1 µ:30kHz:"
+    .AddItem "BW:10MHz FR1 µ:60kHz:"
+    .AddItem "BW:15MHz FR1 µ:60kHz:"
+    .AddItem "BW:20MHz FR1 µ:60kHz:"
+    .AddItem "BW:25MHz FR1 µ:60kHz:"
+    
+    ''-----
+    
+    .AddItem "BW:30MHz FR1 µ:60kHz:"
+    .AddItem "BW:40MHz FR1 µ:60kHz:"
+    .AddItem "BW:50MHz FR1 µ:60kHz:"
+    .AddItem "BW:60MHz FR1 µ:60kHz:"
+    .AddItem "BW:70MHz FR1 µ:60kHz:"
+    ''-----
+    
+    .AddItem "BW:80MHz FR1 µ:60kHz:"
+    .AddItem "BW:90MHz FR1 µ:60kHz:"
+    .AddItem "BW:100MHz FR1 µ:60kHz:"
+    .AddItem "BW:50MHz FR2 µ:60kHz"
+    
+    ''-----
+    
+    .AddItem "BW:100MHz FR2 µ:60kHz:"
+    .AddItem "BW:200MHz FR2 µ:60kHz:"
+    .AddItem "BW:50MHz FR2 µ:120kHz:"
+    .AddItem "BW:100MHz FR2 µ:120kHz:"
+
+    ''-----
+    
+    .AddItem "BW:200MHz FR2 µ:120kHz:"
+    .AddItem "BW:400MHz FR2 µ:120kHz:"
+    .AddItem "other (enter number of PRB, FR and µ)"
+    ''-----
+    
+    
+    End With
+
+
+    
+End Sub

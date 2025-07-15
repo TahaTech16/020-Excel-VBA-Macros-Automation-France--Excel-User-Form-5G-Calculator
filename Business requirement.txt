@@ -1,0 +1,41 @@
+### **Project Title:**
+
+**020 – Excel VBA Macros Automation (France) – Excel UserForm 5G Calculator**
+
+### **Description:**
+
+Developed a custom Excel-based **5G Calculator Tool** using VBA for a France-based telecom client, aimed at simplifying complex network planning calculations through an interactive UserForm interface.
+
+---
+
+### 🔧 **Key Features:**
+
+* **UserForm Interface** to collect 5G planning parameters such as:
+
+  * Frequency band
+  * Bandwidth
+  * Antenna gain
+  * Number of sectors/sites
+  * Path loss and environmental conditions
+
+* **Automated Calculations** performed using pre-defined formulas for:
+
+  * Link Budget
+  * Coverage Radius
+  * Throughput per User / Cell
+  * Site Count Estimations
+
+* **Validation Controls** to ensure correct data input (numeric ranges, mandatory fields)
+
+* **Instant Result Display** within the form and also output to a structured Excel sheet
+
+* **Option to Export Report** with all calculations and charts to PDF or Excel summary sheet
+
+* **Localized Design** for French number formatting (comma as decimal, date format DD/MM/YYYY)
+
+---
+
+### 🎯 **Objective:**
+
+To provide engineers with a fast, accurate, and user-friendly tool to calculate and visualize 5G network performance metrics, reducing manual calculations and ensuring consistency.
+
